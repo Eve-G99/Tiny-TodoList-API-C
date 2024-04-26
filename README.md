@@ -47,42 +47,21 @@ Use Postman or any other API testing tool to interact with the API. Here are som
 
 #### API Endpoints
 
-- **Get All Tasks(default)**
-  Use this request to retrieve all tasks:
-  GET <http://localhost:5000/api/tasks>
-<br>
+- **Fetch All MeetingNotes**
+  - `GET /api/tasks` - Retrieves all the tasks.
+  
+- **Filter MeetingNotes**
+  - `GET /api/tasks/?completed=true` - Filter notes by complete status
 
-- **Get Only Completed Tasks**
-GET <http://localhost:5038/api/tasks/?completed=true>
-<br>
+- **Sort MeetingNotes**
+  - `GET /api/tasks/?sort_by=-createdDate` - Sort notes in descending direction by createdDate
+  - `GET /api/tasks/?sort_by=dueDate` - Sort notes in ascending direction by dueDate
 
-- **Get All Tasks Sorted by Creation Date (Descending)**
-GET <http://localhost:5038/api/tasks/?sort_by=-createdDate>
-<br>
-
-- **Get Completed Tasks Sorted by Due Date (Ascending)**
-GET <http://localhost:5038/api/tasks/?completed=true&sort_by=dueDate>
-<br>
-
-- **Create a New Task**
-  Use this request to add a new task:
-  POST <http://localhost:5000/api/tasks>
-  Content-Type: application/json
-  Body:
-  {
-    "taskDescription": "Finish the backend documentation",
-    "dueDate": "2024-12-31T23:59:00Z",
-    "completed": false,
-    "createdDate": "2024-4-25T16:59:00Z"
-  }
-  <br>
-
-- **Update an Existing Task**
-  Use this request to update a task identified by {id}:
-  PUT <http://localhost:5000/api/tasks/{id}>
-  Content-Type: application/json
-<br>
-
-- **Delete a Task**
-  Use this request to delete a task identified by {id}:
-  DELETE <http://localhost:5000/api/tasks/{id}>
+- **Add a MeetingNote**
+  - `POST /api/tasks` - Adds a new task note. Body requires `taskDescription`, `dueDate`, and `completed`.
+  
+- **Update a MeetingNote**
+  - `PUT /api/tasks/:id` - Updates an existing task by ID. Body can include `taskDescription`, `dueDate`, and `completed`.
+  
+- **Delete a MeetingNote**
+  - `DELETE /api/tasks/:id` - Deletes a task by ID.
