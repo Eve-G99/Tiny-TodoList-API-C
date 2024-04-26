@@ -63,6 +63,7 @@ GET <http://localhost:5038/api/tasks/?sort_by=-createdDate>
 - **Get Completed Tasks Sorted by Due Date (Ascending)**
 GET <http://localhost:5038/api/tasks/?completed=true&sort_by=dueDate>
 <br>
+
 - **Create a New Task**
   Use this request to add a new task:
   POST <http://localhost:5000/api/tasks>
@@ -74,12 +75,14 @@ GET <http://localhost:5038/api/tasks/?completed=true&sort_by=dueDate>
     "completed": false,
     "createdDate": "2024-4-25T16:59:00Z"
   }
-<br>
+  <br>
+
 - **Update an Existing Task**
   Use this request to update a task identified by {id}:
   PUT <http://localhost:5000/api/tasks/{id}>
   Content-Type: application/json
 <br>
+
 - **Delete a Task**
   Use this request to delete a task identified by {id}:
   DELETE <http://localhost:5000/api/tasks/{id}>
