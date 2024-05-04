@@ -109,9 +109,9 @@ namespace TaskApi.Controllers
             var result = await _tasks.ReplaceOneAsync(t => t.Id == id, updatedTask);
             if (result.MatchedCount == 0)
             {
-                return NotFound();
+                return NotFound(new { message = "Task not found." });
             }
-            return NoContent();
+            return Ok(updatedTask);
         }
 
         // DELETE: api/tasks/5
@@ -121,9 +121,9 @@ namespace TaskApi.Controllers
             var result = await _tasks.DeleteOneAsync(t => t.Id == id);
             if (result.DeletedCount == 0)
             {
-                return NotFound();
+                return NotFound(new { message = "Task not found." });
             }
-            return NoContent();
+            return Ok(new { message = "Task deleted successfully." });
         }
     }
 }
