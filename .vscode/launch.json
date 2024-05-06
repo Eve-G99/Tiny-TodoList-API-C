@@ -16,7 +16,7 @@
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development",
                 "ASPNETCORE_URLS": "http://*:8080",
-                "MONGODB_URL": "mongodb+srv://Eve-Guo:88Eve99@coursecluster.bsdcmut.mongodb.net/todoListDB?retryWrites=true&w=majority&appName=CourseCluster"
+                "MONGODB_URL": "mongodb://localhost:27017",
             }
         },
         {
