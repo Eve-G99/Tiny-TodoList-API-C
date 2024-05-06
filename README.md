@@ -23,10 +23,11 @@ This repository contains the backend code for the TodoList iOS application, impl
 
 ### Installation
 
-1. **Adjust server URL as needed in launch.json:**
+1. **Adjust server and database URL and as needed in launch.json:**
 
    ```bash
    "ASPNETCORE_URLS": "http://*:8080"
+   "MONGODB_URL": "mongodb://localhost:27017"
 
 2. **Build and Run the Application:**
 
