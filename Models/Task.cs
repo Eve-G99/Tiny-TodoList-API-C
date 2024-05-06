@@ -9,15 +9,21 @@ namespace TaskApi.Models
      [BsonIgnoreExtraElements]
     public class Task
     {
+        public static DateTime TruncateToSeconds(DateTime dateTime) {
+            dateTime.AddMicroseconds(-dateTime.Millisecond);
+            return dateTime;
+        }
+
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
+
         public string? Id { get; set; }
 
         [BsonElement("taskDescription")]
         public string TaskDescription { get; set; } = string.Empty;// Initialize empty
 
         [BsonElement("createdDate")]
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
+        public DateTime CreatedDate { get; set; } = TruncateToSeconds(DateTime.Now);
 
         [BsonElement("dueDate")]
         public DateTime DueDate { get; set; }

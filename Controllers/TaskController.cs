@@ -6,7 +6,8 @@ using TaskModel = TaskApi.Models.Task; //Avoid ambiguity
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http; 
+using Microsoft.AspNetCore.Http;
+using System.Runtime.InteropServices;
 
 namespace TaskApi.Controllers
 {
@@ -106,6 +107,7 @@ namespace TaskApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateTask(string id, [FromBody] TaskModel updatedTask)
         {
+            Console.WriteLine($"Updating task with ID: {id}");
             var result = await _tasks.ReplaceOneAsync(t => t.Id == id, updatedTask);
             if (result.MatchedCount == 0)
             {
