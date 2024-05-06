@@ -23,7 +23,7 @@ This repository contains the backend code for the TodoList iOS application, impl
 
 ### Installation
 
-1. **Adjust server url as needed in launch.json:**
+1. **Adjust server URL as needed in launch.json:**
 
    ```bash
    "ASPNETCORE_URLS": "http://*:8080"
@@ -31,8 +31,9 @@ This repository contains the backend code for the TodoList iOS application, impl
 2. **Build and Run the Application:**
 
    ```bash
-   docker-compose build
    docker-compose up
+
+3. **Run server in "Run and Debug" in VScode:**
 
 ### Usage
 
