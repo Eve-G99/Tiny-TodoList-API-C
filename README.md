@@ -13,6 +13,7 @@ This repository contains the backend code for the TodoList iOS application, impl
 
 - **ASP.NET Core**: Used for creating the API.
 - **MongoDB**: Used as the backend database to store task data.
+- **Docker**: Used to containerize the application and MongoDB for easy deployment and management.
 
 ### Prerequisites
 
@@ -22,19 +23,16 @@ This repository contains the backend code for the TodoList iOS application, impl
 
 ### Installation
 
-1. **Configure the Application:**
-  Navigate to the appsettings.json file and replace the MongoDB connection string with your connection details:
-  
-   ```json
-   "ConnectionStrings": {
-    "MongoDB": "mongodb+srv://your-mongodb-url"
-    }
+1. **Adjust server url as needed in launch.json:**
+
+   ```bash
+   "ASPNETCORE_URLS": "http://*:8080"
 
 2. **Build and Run the Application:**
 
    ```bash
-   dotnet build
-   dotnet run
+   docker-compose build
+   docker-compose up
 
 ### Usage
 
